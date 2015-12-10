@@ -1,6 +1,6 @@
 package ch.hearc.ig.odi.moviemanager.business;
 
-import ch.hearc.ig.odi.moviemanager.exception.UnicityException;
+import ch.hearc.ig.odi.moviemanager.exception.UniqueException;
 import java.util.*;
 
 /**
@@ -75,13 +75,13 @@ public class Movie {
     /**
      * 
      * @param person
-     * @throws UnicityException 
+     * @throws UniqueException 
      * 
      * Adds a Person to the "this movie has been watched by" list
      */
-    void addPerson(Person person) throws UnicityException {
+    void addPerson(Person person) throws UniqueException {
         if(this.people.contains(person)){
-            throw new UnicityException();
+            throw new UniqueException();
         }
         
         this.people.add(person);
